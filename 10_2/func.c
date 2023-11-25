@@ -1,21 +1,25 @@
-void delete_space(char *str)
+#include <stdio.h>
+#include <string.h>
+
+void delete_space(char *str, char *dst)
 {
-	int flag = 0;
-	while (*str)
+    int i = 0;
+    while (*str == ' ')
 	{
-		if (*str == ' ')
-		{
-			flag = 1;
-			str++;
-			if (flag == 1 && *(str - 1) == ' ')
-			{
-				tmp = *str;
-				*(str - 1) = *str;
-				flag = 0;
-			}
-		}
-		if (flag == 0 
-			
+		str++;
 	}
+    while (*str != '\0')
+    {
+        if (*str != ' ' || (*str == ' ' && *(str + 1) != ' '))
+        {
+			*dst = *str;
+			dst++;
+        }
+        i++;
+        str++;
+    }
+    if (*(dst - 1) == ' ')
+		*(dst - 1) = '\0';
+	*dst = '\0';
 }
 

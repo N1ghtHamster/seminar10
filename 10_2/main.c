@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void delete_space(char *str);
+void delete_space(char *str, char *dst);
 
 void read_file(char *str, char *name)
 {
@@ -27,8 +27,9 @@ int main(int argc, char **argv)
 	char file_read[] = "in10_2.txt";
 	char file_write[] = "out10_2.txt";
 	char str[1000];
+	char dst[1000];
 	read_file(str, file_read);
-	delete_space(str);
-	write_file(str, file_write);
+	delete_space(str, dst);
+	write_file(dst, file_write);
 	return 0;
 }
