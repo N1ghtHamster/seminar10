@@ -20,8 +20,6 @@ void change_path(char *str, char *dst)
 		position = lenstr;
 	else if (tmp != NULL && end != NULL)
 		position = lenstr - lenend;
-	else
-		position = lenstr - lentmp - lenend;
 	strncpy(dst, str, position);
 	strcat(dst, ".html\0");
 }
